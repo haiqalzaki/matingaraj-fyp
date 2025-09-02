@@ -1,0 +1,12 @@
+/* Task CSS here */
+
+.user_button_task {
+    background-color: hsl(240, 100%, 50%);
+    transition: transform 0.5s ease-out;
+}
+
+.user_button_task:hover {
+    background-color: hsl(240, 100%, 35%);
+    transform: scale(1.03);
+}
+

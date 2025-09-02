@@ -1,0 +1,6 @@
+/* Barang CSS here */
+
+.barang_box:hover {
+    background-color: rgb(197, 197, 197);
+    transition: linear 0.7s;
+}

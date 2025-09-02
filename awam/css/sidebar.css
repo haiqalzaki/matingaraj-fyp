@@ -1,0 +1,101 @@
+/* Elak pergerakan mendatar */
+body {
+  overflow-x: hidden; 
+  background-color: #E4E9F7;
+}
+
+/* Sidebar Asal */
+.sidebar {
+  width: 200px;
+  background-color: #ffff;
+  color: gray;
+  height: 100vh;
+  transition: width 0.1s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px 0px 20px 17px;
+  box-shadow: 20px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar Kecil */
+.sidebar.shrink {
+  width: 80px;
+  padding: 20px;
+}
+
+.sidebar.shrink .nav-link span {
+  display: none;
+}
+
+.sidebar.shrink .sidebar-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease, visibility 0.1s ease;
+  /* margin-left: 80px; */
+}
+
+.toggle-btn {
+  position: absolute;
+  right: -10px;
+  top: 20px;
+  background: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar.shrink .nav-link-bottom span {
+  display: none;
+}
+
+/* Hover pada keseluruhan kotak nav-item */
+.sidebar .nav-item:hover {
+  /* background-color: #5f8cac; */
+     background-color: #695CFE;
+}
+
+.sidebar .nav-item:hover i {
+  color: #ffff;
+}
+
+.sidebar .nav-item:hover .nav-link {
+  color: #ffff;
+}
+
+.sidebar .nav-item:hover span {
+  color: #ffff;
+}
+
+.nav-link i {
+    color: gray;
+}
+
+/* halaman utama */
+
+.content {
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    margin-left: 200px;
+    width: calc(100% - 210px);
+}
+  
+.sidebar.shrink + .content {
+    margin-left: 80px;
+    width: calc(100% - 90px);
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    margin-left: 0 !important ;
+    width: 100% !important;
+  }
+}

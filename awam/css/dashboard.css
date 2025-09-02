@@ -1,0 +1,43 @@
+/* Dashboard CSS here */
+
+.user_button_dash {
+    transition: transform 0.2s ease-out;
+}
+
+.user_button_dash:hover {
+    transform: scale(1.05);
+}
+
+.status_box:hover {
+    background-color: rgb(197, 197, 197);
+    transition: linear 0.7s;
+}
+
+#chLine1 {
+    width: 100%;
+    height: 100%; 
+}
+
+.user_button_customer {
+    background-color: hsl(240, 100%, 70%);
+    transition: transform 0.5s ease-out;
+}
+
+.user_button_customer:hover {
+    background-color: hsl(240, 100%, 45%);
+    transform: scale(1.03);
+}
+
+
+@media (max-width: 576px) {
+    /* .status_box {
+        display: none;
+    } */
+}
+
+@media (max-width: 769px) {
+    #chLine1 {
+        width: 100%;
+        height: 25px;
+    }
+}

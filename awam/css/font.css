@@ -1,0 +1,16 @@
+body {
+    font-family: 'Oswald', sans-serif !important;
+}
+
+table.dataTable td {
+    font-size: 0.9rem;
+}
+
+table.dataTable th {
+    font-size: 1rem;
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #F5F4FF !important;
+}
+

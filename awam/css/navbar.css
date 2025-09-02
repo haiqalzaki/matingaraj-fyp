@@ -1,0 +1,14 @@
+.nav_box:hover {
+    background-color: rgb(197, 197, 197);
+    transition: linear 0.7s;
+}
+
+@media (max-width: 660px) {
+    .logout_box {
+        display: none;
+    }
+
+    .search_box {
+        display: none;
+    }
+}

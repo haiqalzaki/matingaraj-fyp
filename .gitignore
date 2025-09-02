@@ -1,0 +1,6 @@
+.env
+log/
+app/vendor/
+app/composer.lock
+awam/js/helper/constant.js
+
