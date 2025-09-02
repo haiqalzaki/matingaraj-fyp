@@ -11,8 +11,8 @@ if (!session_id()) {
 $root = dirname(__DIR__);
 $env = $root . '/.env';
 
-require_once $root . '/app/init.php';
-require_once $root . '/app/vendor/autoload.php';
+require_once $root . '/App/init.php';
+require_once $root . '/App/vendor/autoload.php';
 
 try {
     loadEnv($env);
