@@ -387,7 +387,7 @@ class Customer extends Controller
         $id = isset($params[0]) ? (int) $params[0] : 0;
     
         // Mula Proses: Dapatkan data pelanggan
-        $stmt = $db->prepare("SELECT t_plate, createdOn, t_totalPrice,t_serviceStatus,t_id FROM garaj_task WHERE c_id = ? ORDER BY createdOn DESC");
+        $stmt = $db->prepare("SELECT t_plate, createdOn, t_totalPrice,t_serviceStatus,t_id FROM garaj_task WHERE c_id = ? AND isDeleted = 0 ORDER BY createdOn DESC");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
