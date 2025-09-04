@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?= $_ENV['HOME_URL'] ?>/css/sidebar.css">
     <link rel="stylesheet" href="<?= $_ENV['HOME_URL'] ?>/css/<?= $data['css'] ?>.css">     
     <link rel="stylesheet" href="<?= $_ENV['HOME_URL'] ?>/library/bootstrap-icons/css/bootstrap-icons.css">
+    <script> window.BASE_PATH = "<?= $_ENV['HOME_URL'] ?>"; </script>
     <script src="<?= $_ENV['HOME_URL'] ?>/js/helper/constant.js"></script>
     <script src="<?= $_ENV['HOME_URL'] ?>/js/helper/config.js"></script>
     <script src="<?= $_ENV['HOME_URL'] ?>/js/helper/function.js"></script>
