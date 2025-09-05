@@ -19,6 +19,9 @@
                 <button type="submit" class="btn btn-primary w-100">Login</button>
             </div>
         </form>
+        <p class="mx-auto text-center mt-4">
+            <a class="link-underline-light" href="<?= $_ENV['HOME_URL'] ?>/home/forgot">Forgot Password?</a>
+        </p>
     </div>
 </div>
 
