@@ -25,4 +25,4 @@
     </div>
 </div>
 
-<script src="js/home/home.js"></script>
+<script src="<?= $_ENV['HOME_URL'] ?>/js/home/home.js"></script>

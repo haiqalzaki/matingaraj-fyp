@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Helper\Flasher;
 use App\Helper\Response;
 use App\Helper\Logger;
 use App\Models\SessionHandler;
+use App\Models\UserEntity;
 
 class Home extends Controller 
 {
@@ -26,13 +28,13 @@ class Home extends Controller
         // var_dump($_SESSION['cubaLogin']);
 
         if (isset($_SESSION['cubaLogin'])) 
-            {
-                if ($_SESSION['cubaLogin']['maxCuba'] === true) 
-                    {
-                        $this->resetAttemptAfterPresetTime();
-                        $this->max();
-                    }
-            }
+        {
+            if ($_SESSION['cubaLogin']['maxCuba'] === true) 
+                {
+                    $this->resetAttemptAfterPresetTime();
+                    $this->max();
+                }
+        }
 
         $data['tajuk'] = $this->tajuk;
         $data['css'] = $this->css;
@@ -72,9 +74,8 @@ class Home extends Controller
             $this->index();
         }
 
-        Response::returnJSON(false, 'You have reached maximum login attempt! Please try again in 15 minutes.', ['lockout' => true]);
         Logger::log('Error logged: Login failure from Home Controller!');
-        exit();
+        Response::returnJSON(false, 'You have reached maximum login attempt! Please try again in 15 minutes.', ['lockout' => true]);
     }
 
     public function login($params = []) 
@@ -90,9 +91,8 @@ class Home extends Controller
         $this->resetAttemptAfterPresetTime();
         
         if (($name === null) || ($password === null)) {
-            Response::returnJSON(false, 'One or more fields cannot be empty.');
             Logger::log('Error logged: Credential failure from Home Controller!');
-            exit();
+            Response::returnJSON(false, 'One or more fields cannot be empty.');
         }  
 
         try {
@@ -107,17 +107,159 @@ class Home extends Controller
 
                         $this->lockout();
                     }
-                Response::returnJSON(false, 'Login failed. Wrong credential.');
                 Logger::log('Error logged: Login failure from Home Controller!');
-                exit();
+                Response::returnJSON(false, 'Login failed. Wrong credential.');
             }
 
             unset($_SESSION['cubaLogin']);
 
             Response::returnJSON(true, 'Login successful! Redirecting to Dashboard...');
         } catch (\Exception $e) {
-            Response::returnJSON(false, 'Failed logging in!');
             Logger::log('Exception caught: '. $e->getMessage());
+            Response::returnJSON(false, 'Failed logging in!');
+        }
+    }
+
+    public function forgot() 
+    {
+        if ($this->isValidSession() === true) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/dashboard');
+            exit();
+        }
+
+        $data['tajuk'] = "Forgot Password";
+        $data['css'] = "forgot";
+        
+        $this->view('Partials/head-main', $data);
+        $this->view('Templates/Home/forgot', $data);
+        $this->view('Partials/footer-main');
+        exit();
+    }
+
+    public function verifyKey($params = []) 
+    {
+        if ($this->isGET()) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/home/forgot');
+            exit();
+        }
+
+        $email = $params['userEmail'] ?? null;
+        $secretKey = $params['userKey'] ?? null;
+
+        if (($email === null) || ($secretKey === null)) {
+            Logger::log('Error logged: Credential failure from Home Controller!');
+            Response::returnJSON(false, 'One or more fields cannot be empty.');
+        }
+
+        $appSecret = $_ENV['GLOBAL_KEY'];
+
+        try {
+            $db = new \mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);  
+
+            $sql = "SELECT 1 FROM garaj_user WHERE u_email = ?";
+            $stmt = $db->prepare($sql);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $stmt->bind_result($count);
+            $stmt->fetch();
+
+            if ($count < 1 || $appSecret !== $secretKey) {
+                Logger::log('Error logged: Credential failure from Home Controller!');
+                Response::returnJSON(false, 'Invalid credentials!');
+            }
+
+            $_SESSION['password-change'] = [
+                'is-verified' => true,
+                'email' => $email
+            ];
+
+            $stmt->close();
+            $db->close();
+
+            Response::returnJSON(true, 'Login successful! Redirecting to set password page...');
+        } catch (\Exception $e) {
+            if (isset($stmt)) {
+                $stmt->close();
+            }
+            if (isset($db)) {
+                $db->close();
+            }
+            
+            Logger::log('Exception caught: '. $e->getMessage());
+            Response::returnJSON(false, 'Failed verifying!');
+        }
+    }
+
+    public function passwordSetting() 
+    {
+        if ($this->isValidSession() === true) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/dashboard');
+            exit();
+        }
+
+        if (!isset($_SESSION['password-change'])) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/home');
+            exit();
+        }
+
+        $data['tajuk'] = "Password Setup";
+        $data['css'] = "forgot";
+        
+        $this->view('Partials/head-main', $data);
+        $this->view('Templates/Home/setpassword', $data);
+        $this->view('Partials/footer-main');
+        exit();
+    }
+
+    public function setPassword($params = []) 
+    {
+        if ($this->isGET()) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/home');
+            exit();
+        }
+
+        if (!isset($_SESSION['password-change'])) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/home');
+            exit();
+        }
+
+        $userEmail = $_SESSION['password-change']['email'] ?? null;
+        $newPassword = $params['userPassword'] ?? null;
+
+        if ($newPassword === null) {
+            Response::returnJSON(false, 'Passwords field cannot be empty!');
+        }
+
+        if (strlen($newPassword) < 10) {
+            Response::returnJSON(false, 'Password must be at least 10 characters.');
+        }
+
+        $newPasswordHash = password_hash($newPassword, PASSWORD_BCRYPT);
+
+        try {
+            $db = new \mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);  
+
+            $sql = "UPDATE garaj_user SET u_password = ? WHERE u_email = ?";
+            $stmt = $db->prepare($sql);
+            $stmt->bind_param("ss", $newPasswordHash, $userEmail);
+            $stmt->execute();
+
+            $stmt->close();
+            $db->close();
+
+            unset($_SESSION['password-change']);
+
+            Response::returnJSON(true, 'Change password successful! Redirecting to login page...');
+        } catch (\Exception $e) {
+            if (isset($stmt)) {
+                $stmt->close();
+            }
+            if (isset($db)) {
+                $db->close();
+            }
+            
+            Logger::log('Exception caught: '. $e->getMessage());
+            Response::returnJSON(false, 'Failed to change password!');
         }
     }
 
