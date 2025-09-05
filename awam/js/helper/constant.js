@@ -1,0 +1,4 @@
+// HANYA CONSTANT KONFIGURASI DISINI //
+
+const BASE_PATH = window.BASE_PATH || "";
+const REDIRECT_HOME = window.BASE_PATH || "";
