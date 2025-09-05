@@ -46,9 +46,8 @@ class Request
 
             // Periksa form POST, jika kosong hentikan permintaan dan pulangkan respon
             if (empty($this->postData)) { 
-                Response::returnJSON(false, "Invalid request!");
                 Logger::log("Request Layer Error: POST field is empty.");
-                exit();
+                Response::returnJSON(false, "Invalid request!");      
             }
 
             // Jika fail wujud di dalam POST, hantar fail juga!

@@ -17,7 +17,6 @@ class Logger
     {   
         self::init();
         error_log($message . " >> " . date('H:i:s d-m-Y') . "\r\n", 3, self::$logDir . "log.txt");
-        Logger::stackTraces($message);
     }
 
     private static function stackTraces($message) {
