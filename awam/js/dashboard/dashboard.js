@@ -167,8 +167,23 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordVerify)) {
+            showAlert('Password must contain at least one special character!');
+            document.getElementById('user-password-add').value = '';
+            document.getElementById('user-password-confirm-add').value = '';
+            return;
+        }
+
+        if (/\s/.test(passwordVerify)) {
+            showAlert('Password cannot contain spaces!');
+            document.getElementById('user-password-add').value = '';
+            document.getElementById('user-password-confirm-add').value = '';
+            return;
+        }
+
         if (passwordVerify !== passwordConfirm) {
             showAlert('Password didn\'t match! Try again.');
+            document.getElementById('user-password-confirm-add').value = '';
             return;
         }
 
