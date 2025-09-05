@@ -1,6 +1,35 @@
 /* User CSS here */
 
-.user_button:hover {
+/* .user_button1 {
+    border-color: blueviolet;
+    background-color: blueviolet;
+}
+
+.user_button2 {
+    border-color: purple;
+    background-color: purple;
+} */
+
+/* .user_button3 {
+    border-color: blueviolet;
+    background-color: blueviolet;
+} */
+
+.user_button1:hover {
+    /* border-color: rgb(158, 84, 228);
+    background-color: rgb(158, 84, 228); */
     transition: 0.7s;
     transform: scale(1.1);
 }
+
+.user_button2:hover {
+    /* border-color: rgb(168, 47, 168);
+    background-color: rgb(168, 47, 168); */
+    transition: 0.7s;
+    transform: scale(1.1);
+}
+
+/* .user_button3:hover {
+    transition: 0.7s;
+    transform: scale(1.1);
+} */
