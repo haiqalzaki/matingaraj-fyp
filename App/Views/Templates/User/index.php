@@ -7,9 +7,9 @@
                     <button class="user_button1 btn btn-primary p-3 my-2 w-75 h-100 shadow" 
                     data-bs-toggle="modal" data-bs-target="#user-modal">Add System User</button>
                 </div>
-                <div class="col-12 col-sm-2 col-md-3">
+                <!-- <div class="col-12 col-sm-2 col-md-3">
                     <button class="user_button2 btn btn-success p-3 my-2 w-75 h-100 shadow">Change Password</button>
-                </div>
+                </div> -->
                 <!-- <div class="col-12 col-sm-2 col-md-3">
                     <button class="user_button3 btn btn-secondary p-3 my-2 w-75 h-100 shadow">Get Secret Key</button>
                 </div> -->
@@ -208,10 +208,10 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-end mt-3 mb-2">
+            <div class="d-flex justify-content-between mt-3 mb-2">
                 <input type="hidden" name="userID" id="user-id-edit">
-                <!-- <button type="button" class="btn btn-danger">Reset Password</button> -->
-                <button type="button" class="btn btn-success w-25" id="update-user-btn">Update</button>
+                <button type="button" class="btn btn-primary" id="reset-pswd-btn">Reset Password</button>
+                <button type="button" class="btn btn-success" id="update-user-btn">Update</button>
             </div>
         </form>
       </div>

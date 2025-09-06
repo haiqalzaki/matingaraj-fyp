@@ -259,6 +259,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     })
 
+    document.getElementById("reset-pswd-btn").addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        let userId = document.getElementById('user-id-edit').value;
+        let userName = document.getElementById('user-name-edit').value;
+
+        window.location.href = `${BASE_PATH}/user/resetpassword/${userId}/${userName}`;
+    })
+
     document.getElementById('delete-user-btn').addEventListener('click', async (e) => {
         e.preventDefault();
 

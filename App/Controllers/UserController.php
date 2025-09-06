@@ -222,4 +222,85 @@ class User extends Controller
             Logger::log('Exception caught: '. $e->getMessage());
         }     
     }
+
+    public function resetPassword($params = []) 
+    {
+        if (!$this->isValidSession() || !$this->isValidAdmin()) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/home');
+            exit();
+        }
+
+        $data['tajuk'] = "Reset Password";
+        $data['css'] = "reset";
+
+        $userId = $params[0] ?? 0;
+        $userName = $params[1] ?? '';
+
+        $data['userId'] = (int) $userId;
+        $data['userName'] = (string) $userName;
+        
+        $this->view('Partials/head', $data);
+        $this->view('Partials/navigation');
+        $this->view('Partials/open-wrapper');
+        $this->view('Templates/User/reset', $data);
+        $this->view('Partials/close-wrapper');
+        $this->view('Partials/footer');
+        exit();
+    }
+
+    public function resetPasswordConfirm($params = []) 
+    {
+        if ($this->isGET()) {
+            $this->index();
+        }
+
+        if (!$this->isValidSession() || !$this->isValidAdmin()) {
+            header('Location: ' . $_ENV['HOME_URL'] . '/home');
+            exit();
+        }
+
+        $userId = $params['userID'] ?? null;
+        $newPassword = $params['userNewPassword'] ?? null;
+        $secretKey = $params['userKey'] ?? null;
+
+        $appSecret = $_ENV['GLOBAL_KEY'];
+
+        if ($appSecret !== $secretKey) {
+            Response::returnJSON(false, 'Invalid secret key!');
+        }
+
+        if ($newPassword === null) {
+            Response::returnJSON(false, 'Passwords field cannot be empty!');
+        }
+
+        if (strlen($newPassword) < 10) {
+            Response::returnJSON(false, 'Password must be at least 10 characters.');
+        }
+
+        $newPasswordHash = password_hash($newPassword, PASSWORD_BCRYPT);
+
+        try {
+            $db = new \mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);  
+
+            $sql = "UPDATE garaj_user SET u_password = ? WHERE u_id = ?";
+            $stmt = $db->prepare($sql);
+            $stmt->bind_param("si", $newPasswordHash, $userId);
+            $stmt->execute();
+
+            $stmt->close();
+            $db->close();
+
+            Response::returnJSON(true, 'Change password successful! Redirecting to user page...');
+        } catch (\Exception $e) {
+            if (isset($stmt)) {
+                $stmt->close();
+            }
+            if (isset($db)) {
+                $db->close();
+            }
+            
+            Logger::log('Exception caught: '. $e->getMessage());
+            Response::returnJSON(false, 'Failed to reset password!');
+        }
+    }
 }
