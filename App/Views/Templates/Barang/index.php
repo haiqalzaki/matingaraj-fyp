@@ -58,7 +58,7 @@
                         <div class="mb-3 text-start">
                             <label for="barang-stock-add" class="form-label">Stock: </label>
                             <input type="number" step="1" class="form-control" name="barangStok"
-                                id="barang-stock-add" placeholder="0.00">
+                                id="barang-stock-add" placeholder="0">
                         </div>
                         <div class="mb-3 text-start">
                             <div class="row">
@@ -67,7 +67,7 @@
                                     </label>
                                     <div class="input-group">
                                         <span class="input-group-text">RM</span>
-                                        <input type="number" step="0.01" class="form-control" name="barangPrice"
+                                        <input type="number" step="1" class="form-control" name="barangPrice"
                                             id="barang-price-add" placeholder="0.00">
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                     </label>
                                     <div class="input-group">
                                         <span class="input-group-text">RM</span>
-                                        <input type="number" step="0.01" class="form-control"
+                                        <input type="number" step="1" class="form-control"
                                             name="barangMarkup" id="barang-markup-add" placeholder="0.00">
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                         <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="barang-stock-edit" class="form-label">Stock: </label>
-                                <input type="text" class="form-control" name="barangStock" id="barang-stock-edit">
+                                <input type="number" step="1" class="form-control" name="barangStock" id="barang-stock-edit">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4">
@@ -157,7 +157,7 @@
                                 <label for="barang-harga-edit" class="form-label">Cost Per Unit: </label>
                                 <div class="input-group">
                                     <span class="input-group-text">RM</span>
-                                    <input type="number" step="0.01" class="form-control" name="barangPrice"
+                                    <input type="number" step="1" class="form-control" name="barangPrice"
                                         id="barang-harga-edit" placeholder="(Default = 0.00)">
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                                 <label for="barang-markup-edit" class="form-label">Markup: </label>
                                 <div class="input-group">
                                     <span class="input-group-text">RM</span>
-                                    <input type="number" step="0.01" class="form-control" name="barangMarkup"
+                                    <input type="number" step="1" class="form-control" name="barangMarkup"
                                         id="barang-markup-edit" placeholder="(Default = 0.00)">
                                 </div>
                             </div>
@@ -177,7 +177,7 @@
                                 <label for="barang-total-edit" class="form-label">Gross: </label>
                                 <div class="input-group">
                                     <span class="input-group-text">RM</span>
-                                    <input type="number" step="0.01" class="form-control" id="barang-total-edit"
+                                    <input type="number" step="1" class="form-control" id="barang-total-edit"
                                         readonly disabled>
                                 </div>
                             </div>
