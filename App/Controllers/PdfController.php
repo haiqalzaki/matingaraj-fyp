@@ -92,7 +92,7 @@ class PDF extends Controller
         // Load semua data
         $data['title'] = "QUOTATION";
         $data['date'] = date("d/m/Y");
-        $data['imagePath'] = $_ENV['BASE_ROOT'] . "/image/logo.png";
+        $data['imagePath'] = $_ENV['BASE_ROOT'] . "/awam/image/logo.png";
         
         // Mula buffer output
         ob_start();
@@ -206,7 +206,7 @@ class PDF extends Controller
         // Load semua data
         $data['title'] = "RECEIPT";
         $data['date'] = date("d/m/Y");
-        $data['imagePath'] = $_ENV['BASE_ROOT'] . "/image/logo.png";
+        $data['imagePath'] = $_ENV['BASE_ROOT'] . "/awam/image/logo.png";
         
         // Mula buffer output
         ob_start();
