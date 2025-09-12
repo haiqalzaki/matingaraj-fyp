@@ -200,9 +200,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             `
         ]);
 
-        available = await fetchAvailableBarang();
+        // available = await fetchAvailableBarang();
 
-        document.getElementById('barang-available').textContent = available.total_barang;
+        // document.getElementById('barang-available').textContent = available.total_barang;
 
         var donutOptions = {
             plugins: {

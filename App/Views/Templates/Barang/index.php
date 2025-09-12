@@ -1,5 +1,5 @@
 <!-- Action Section -->
-<div class="container text-center">
+<!-- <div class="container text-center">
     <div class="row py-2 mt-3 justify-content-between">
         <div class="col-sm-12 col-md-12 mb-3">
             <div class="barang_box card shadow rounded-4">
@@ -14,9 +14,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Table Section -->
-<div class="container text-center">
+<div class="container text-center mt-3">
     <div class="row pb-2">
         <div class="col py-1">
             <div class="card shadow">
