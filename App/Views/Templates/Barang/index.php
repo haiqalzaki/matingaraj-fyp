@@ -48,11 +48,11 @@
         <div class="col-sm-12 col-md-12 col-lg-8 py-2">
             <div class="card shadow">
                 <div class="card-body">
-                    <h3 class="pb-2 border-bottom">Add Barang</h3>
+                    <h3 class="pb-2 border-bottom">Add Item</h3>
 
                     <form enctype="multipart/form-data" id="add-barang-form">
                         <div class="mb-3 text-start">
-                            <label for="barang-name-add" class="form-label">Barang Name: </label>
+                            <label for="barang-name-add" class="form-label">Item Name: </label>
                             <input type="text" class="form-control" name="barangName" id="barang-name-add" placeholder="Enter item name here">
                         </div>
                         <div class="mb-3 text-start">
@@ -92,17 +92,17 @@
                             </div>
                         </div>
                         <div class="mb-4 text-start">
-                            <label for="barang-pic-add" class="form-label">Barang Image (optional): </label>
+                            <label for="barang-pic-add" class="form-label">Item Image (optional): </label>
                             <input class="form-control" type="file" name="barangImage" id="barang-pic-add">
                         </div>
                         <div class="mb-3 text-start">
-                            <label for="barang-remark-add" class="form-label">Barang Remark: </label>
+                            <label for="barang-remark-add" class="form-label">Item Remark: </label>
                             <textarea class="form-control" name="barangRemark" id="barang-remark-add"
                                 rows="5" placeholder="Any remarks/description for item"></textarea>
                         </div>
                         <div class="d-flex justify-content-end mt-4">
                             <button type="button" class="btn btn-primary w-25 fs-6" id="add-barang-btn">Add
-                                Barang</button>
+                                Item</button>
                         </div>
                     </form>
                 </div>
@@ -127,7 +127,7 @@
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 text-center w-100" id="barang-edit-modal-label">Edit Barang</h1>
+                <h1 class="modal-title fs-5 text-center w-100" id="barang-edit-modal-label">Edit Item</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -142,7 +142,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
-                                <label for="barang-name-edit" class="form-label">Barang Name: </label>
+                                <label for="barang-name-edit" class="form-label">Item Name: </label>
                                 <input type="text" class="form-control" name="barangName" id="barang-name-edit">
                             </div>
                         </div>
@@ -186,7 +186,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label for="barang-remark-edit" class="form-label">Barang Remark: </label>
+                                <label for="barang-remark-edit" class="form-label">Item Remark: </label>
                                 <textarea class="form-control" name="barangRemark" id="barang-remark-edit"
                                     rows="5"></textarea>
                             </div>

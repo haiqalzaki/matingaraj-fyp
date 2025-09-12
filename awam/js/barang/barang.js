@@ -74,7 +74,7 @@ async function editBarang(id) {
 }
 
 async function deleteBarang() {
-    await deletePopup(`Barang Deletion`, `Are you sure you want to delete this barang?`, `Proceed`);
+    await deletePopup(`Item Deletion`, `Are you sure you want to delete this item?`, `Proceed`);
 }
 
 async function fetchBarang(id) {
@@ -250,8 +250,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         responsive: true,
         data: barangData,
         columns: [
-            { title: "Barang Image", className: "text-center" },
-            { title: "Barang Name", className: "text-center" },
+            { title: "Item Image", className: "text-center" },
+            { title: "Item Name", className: "text-center" },
             { title: "Stock", className: "text-center" },
             { title: "Unit Cost (RM)", className: "text-center" },
             { title: "Unit Markup (RM)", className: "text-center" },
