@@ -1,7 +1,7 @@
 
 <!-- Action Section -->
 <div class="container text-center">
-    <div class="row py-2 mt-4 justify-content-between">
+    <div class="row py-2 mt-2 justify-content-between">
         <div class="col-sm-6 col-md-6 col-lg-3">
             <div class="barang_box card shadow rounded-5 border">
                 <div class="card-body">
@@ -193,6 +193,8 @@
                                 <label for="customer-name-add" class="form-label">Name: </label>
                                 <input type="text" class="form-control" name="cxName" id="customer-name-add" placeholder="Enter customer name">
                             </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="customer-email-add" class="form-label">Email: </label>
                                 <input type="text" class="form-control" name="cxEmail" id="customer-email-add" placeholder="Enter email (optional)">
@@ -203,6 +205,8 @@
                                 <label for="customer-phone-add" class="form-label">Telephone: </label>
                                 <input type="text" class="form-control" name="cxPhone" id="customer-phone-add" placeholder="Enter phone number">
                             </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="customer-platform-add" class="form-label">Platform: </label>
                                 <select name="cxPlatform" class="form-select" id="customer-platform-add">
@@ -220,7 +224,7 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="user-remark-add" class="form-label">Customer Remark: </label>
-                                <textarea class="form-control" name="cxRemark" id="user-remark-add" rows="5"
+                                <textarea class="form-control" name="cxRemark" id="user-remark-add" rows="10"
                                     value="" placeholder="Any remarks/detail here"></textarea>
                             </div>
                         </div>

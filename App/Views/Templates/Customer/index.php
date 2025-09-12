@@ -56,8 +56,10 @@
                         <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="customer-name-add" class="form-label">Name: </label>
-                                <input type="text" class="form-control" name="cxName" id="customer-name-add" placeholder="Enter customer name">
+                                <input type="text" class="form-control" name="cxName" id="customer-name-add" placeholder="Enter customer name" required>
                             </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="customer-email-add" class="form-label">Email: </label>
                                 <input type="text" class="form-control" name="cxEmail" id="customer-email-add" placeholder="Enter email (optional)">
@@ -66,8 +68,10 @@
                         <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="customer-phone-add" class="form-label">Telephone: </label>
-                                <input type="text" class="form-control" name="cxPhone" id="customer-phone-add" placeholder="Enter phone number">
+                                <input type="text" class="form-control" name="cxPhone" id="customer-phone-add" placeholder="Enter phone number" required>
                             </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
                                 <label for="customer-platform-add" class="form-label">Platform: </label>
                                 <select name="cxPlatform" class="form-select" id="customer-platform-add">
@@ -76,7 +80,7 @@
                                     <option value="Instagram">Instagram</option>
                                     <option value="Facebook">Facebook</option>
                                     <option value="TikTok">TikTok</option>
-				    <option value="Other">Other</option>
+				                    <option value="Other">Other</option>
                                 </select>
                             </div>
                         </div>
@@ -85,7 +89,7 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="user-remark-add" class="form-label">Customer Remark: </label>
-                                <textarea class="form-control" name="cxRemark" id="user-remark-add" rows="5"
+                                <textarea class="form-control" name="cxRemark" id="user-remark-add" rows="10"
                                     value="" placeholder="Any remarks/detail here"></textarea>
                             </div>
                         </div>
@@ -118,14 +122,14 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
-                                <label for="customer-phone-edit" class="form-label">Telephone: </label>
-                                <input type="text" class="form-control" name="cxPhone" id="customer-phone-edit">
+                                <label for="customer-email-edit" class="form-label">Email: </label>
+                                <input type="text" class="form-control" name="cxEmail" id="customer-email-edit">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="mb-2">
-                                <label for="customer-email-edit" class="form-label">Email: </label>
-                                <input type="text" class="form-control" name="cxEmail" id="customer-email-edit">
+                                <label for="customer-phone-edit" class="form-label">Telephone: </label>
+                                <input type="text" class="form-control" name="cxPhone" id="customer-phone-edit">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
@@ -137,7 +141,7 @@
                                     <option value="Instagram">Instagram</option>
                                     <option value="Facebook">Facebook</option>
                                     <option value="TikTok">TikTok</option>
-				    <option value="Other">Other</option>
+				                    <option value="Other">Other</option>
                                 </select>
                             </div>
                         </div>
@@ -147,7 +151,7 @@
                             <div class="mb-3">
                                 <label for="customer-remark-edit" class="form-label">Customer Remark: </label>
                                 <textarea class="form-control" name="cxRemark" id="customer-remark-edit"
-                                    rows="5" value=""></textarea>
+                                    rows="10" value=""></textarea>
                             </div>
                         </div>
                     </div>
