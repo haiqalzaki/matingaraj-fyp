@@ -1,7 +1,7 @@
 <div class="content full-width container-fluid">
-    <div class="row ms-1 me-2">
+    <div class="row">
         <!-- Task Form -->
-        <div class="container mt-4">
+        <div class="container mt-3">
             <div class="row">
                 <!-- Form Column -->
                 <div class="col-sm-12 col-md-12 col-lg-6 mb-2">

@@ -1,7 +1,7 @@
 <div class="content full-width container-fluid">
-    <div class="row ms-1 me-2">
+    <div class="row">
         <!-- Task Form -->
-        <div class="container mt-4">
+        <div class="container mt-3">
             <div class="row">
                 <!-- Form Column -->
                 <div class="col-sm-12 col-md-12 col-lg-6 mb-2">
@@ -14,7 +14,7 @@
                                 <div class="row pb-3">
                                     <div class="col" id="customer-box">
                                         <label class="form-label" for="customer-search">Customer Name: </label>
-                                        <div class="col pb-2 d-flex gap-2" id="customer-box-inside">
+                                        <div class="col d-flex gap-2" id="customer-box-inside">
                                             <input type="hidden" name="customerID" id="customer-id">
                                             <input class="form-control" type="text" name="customer" id="customer-search" placeholder="Search customer here..">
                                             <button type="button" class="btn btn-primary btn-sm" onclick="clearCustomer()">Clear</button>
