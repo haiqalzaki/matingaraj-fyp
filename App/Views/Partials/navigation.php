@@ -1,11 +1,11 @@
 <!-- NAVBAR (Muncul di Mobile Sahaja) -->
-<nav class="navbar navbar-expand-md navbar-light bg-light d-md-none">
+<nav class="navbar navbar-expand-md navbar-light bg-light d-md-none shadow sticky-top">
     <div class="container-fluid">
         <img src="<?= $_ENV['HOME_URL'] ?>/image/logo.png" alt="" class="img-fluid rounded-circle" width="100">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse mt-4" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item text-center color">
                     <a class="nav-link" href="<?= $_ENV['HOME_URL'] ?>/">Dashboard</a>

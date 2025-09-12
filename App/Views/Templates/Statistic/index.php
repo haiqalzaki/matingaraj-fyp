@@ -1,6 +1,5 @@
 <!--- table dection -->
-
-<div class="container pt-2">
+<div class="container mt-3">
     <div class="card px-3 pb-4">
 	<div class="mt-4">
             <h3 class="text-center mb-4 fw-bold">Statistic Summary</h3>
