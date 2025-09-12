@@ -2,8 +2,8 @@
 <nav class="nav_bar navbar navbar-expand-sm border-bottom shadow sticky-top d-none d-md-block" style="background-color: #ffff">
   <div class="container-fluid d-flex justify-content-between align-self-center">
     <div>
-        <h3 class="pb-2 pt-3 ms-3 text-uppercase">
-            <?= $data['tajuk'] ?>
+        <h3 class="ms-3">
+            
         </h3>
     </div>
     <div>
