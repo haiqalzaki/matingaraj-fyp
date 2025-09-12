@@ -80,8 +80,8 @@
 </div>
 
 <!-- Add User Modal -->
-<div class="modal fade in" id="user-modal" tabindex="-1" aria-labelledby="user-modal-label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade in p-0" id="user-modal" tabindex="-1" aria-labelledby="user-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5 text-center w-100" id="user-modal-label">Add User</h1>
@@ -90,13 +90,13 @@
       <div class="modal-body">
         <form class="form-control" id="add-user-form" autocomplete="off">
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <div class="mb-2">
                         <label for="user-name-add" class="form-label">Username: </label>
                         <input type="text" class="form-control" name="userName" id="user-name-add" placeholder="Enter username here">
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <div class="mb-2">
                         <label for="user-phone-add" class="form-label">Telephone: </label>
                         <input type="text" class="form-control" name="userPhone" id="user-phone-add" placeholder="Enter phone number here">
@@ -104,13 +104,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col">
                     <div class="mb-2">
                         <label for="user-email-add" class="form-label">Email: </label>
                         <input type="email" class="form-control" name="userEmail" id="user-email-add" placeholder="Enter email here">
                     </div>
                 </div>
-                <div class="col-4">
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="mb-2">
                     <label for="user-role-add" class="form-label">Platform: </label>
                         <select name="userRole" class="form-select" id="user-role-add">
@@ -122,13 +124,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col">
                     <div class="mb-2">
                         <label for="user-password-add" class="form-label">Password: </label>
                         <input type="password" class="form-control" name="userPassword" id="user-password-add" placeholder="Enter password here (Min. 10 characters)">
                     </div>
                 </div>
-                <div class="col-6">
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="mb-2">
                         <label for="user-password-confirm-add" class="form-label">Confirm Password: </label>
                         <input type="password" class="form-control" id="user-password-confirm-add" placeholder="Confirm password here (Min. 10 characters)">
@@ -145,7 +149,7 @@
 </div>
 
 <!-- Delete User Modal -->
-<div class="modal fade in" id="delete-modal" tabindex="-1">
+<div class="modal fade in p-0" id="delete-modal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -167,7 +171,7 @@
 </div>
 
 <!-- Modify User Modal -->
-<div class="modal fade in" id="modify-user-modal" tabindex="-1">
+<div class="modal fade in p-0" id="modify-user-modal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -177,13 +181,13 @@
       <div class="modal-body">
         <form class="form-control" id="modify-user-form">
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <div class="mb-2">
                         <label for="user-name-edit" class="form-label">Username: </label>
                         <input type="text" class="form-control" name="userName" id="user-name-edit">
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <div class="mb-2">
                         <label for="user-phone-edit" class="form-label">Telephone: </label>
                         <input type="text" class="form-control" name="userPhone" id="user-phone-edit">
@@ -191,13 +195,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col">
                     <div class="mb-2">
                         <label for="user-email-edit" class="form-label">Email: </label>
                         <input type="email" class="form-control" name="userEmail" id="user-email-edit">
                     </div>
                 </div>
-                <div class="col-4">
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="mb-2">
                     <label for="user-role-edit" class="form-label">Platform: </label>
                         <select name="userRole" class="form-select" id="user-role-edit">
